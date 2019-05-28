@@ -13,6 +13,12 @@
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/style.css">
 
+     <script>
+          $(document).ready(function(){
+               listarPessoas();
+          });
+     </script>
+
 </head>
 <body>
      <div class="container">
@@ -20,8 +26,54 @@
                <div class="col-xs-12">
                     <div class="form-group">
                          <label for="">Lista de Pessoas</label>
-                         <select name="" id="lista" class="form-control"></select>
+                         <select name="" id="lista" class="form-control" ></select>
                     </div>
+               </div>
+          </div>
+          <div class="row">
+               <div class="col-xs-12">
+                    <div class="form-group"> 
+                         <label>Codigo: </label>
+                         <input type="text" class="form-control" id="codigo" readonly>     
+                    </div>       
+               </div>
+          </div>
+          <div class="row">
+               <div class="col-xs-12">
+                    <div class="form-group"> 
+                         <label>Nome: </label>
+                         <input type="text" class="form-control" id="nome">     
+                    </div>       
+               </div>
+          </div>
+          <div class="row">
+               <div class="col-xs-12">
+                    <div class="form-group"> 
+                         <label>E-mail: </label>
+                         <input type="text" class="form-control" id="email">     
+                    </div>       
+               </div>
+          </div>
+          <div class="row">
+               <div class="col-xs-3">
+                    <button class="btn btn-success btn-block" id="salvar">
+                         <span class="glyphicon glyphicon-ok-sign"/>
+                    </button>
+               </div>
+               <div class="col-xs-3">
+                    <button class="btn btn-success btn-block" id="editar">
+                         <span class="glyphicon glyphicon-trash"/>
+                    </button>
+               </div>
+               <div class="col-xs-3">
+                    <button class="btn btn-success btn-block" id="excluir">
+                         <span class="glyphicon glyphicon-remove-sign"/>
+                    </button>
+               </div>
+               <div class="col-xs-3">
+                    <button class="btn btn-success btn-block" id="cancelar">
+                         <span class="glyphicon glyphicon-pencil"/>
+                    </button>
                </div>
           </div>
      </div>

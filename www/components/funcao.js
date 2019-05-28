@@ -25,3 +25,42 @@ $(document).on("click", "#listar", function(){
      $(location).attr("href" , "lista.html");
 });
 
+function listarPessoas(){
+     $.ajax({
+          type: "post", //como enviar
+          url: "https://mobile2ds2-luizamaro11.c9users.io/webservice/lista.php", // para onde enviar
+          dataType: "json",
+          // se der certo
+          success: function(data){
+               var itemlista = "";
+               $.each(data.pessoas, function(i, dados){
+                    itemlista += "<option value='"+dados.codigo+"'>"+dados.nome+"</option>";
+               });
+          $("#lista").html(itemlista);
+          },
+          // se der errado
+          error: function(data){
+               navigator.notification.alert(data);
+          }
+     });
+}
+
+$(document).on("change", "#lista", function(){
+     var codigoescolhido = $("option:selected", ("#lista")).val();
+     $.ajax({
+          type: "get", //como enviar
+          url: "https://mobile2ds2-luizamaro11.c9users.io/webservice/lista-um.php", // para onde enviar
+          data: "id = " + codigoescolhido,
+          dataType: "json",
+          // se der certo
+          success: function(data){
+               $("#codigo").val(data.pessoas.codigo);
+               $("#nome").val(data.pessoas.nome);
+               $("#email").val(data.pessoas.email);
+          },
+          // se der errado
+          error: function(data){
+               navigator.notification.alert(data);
+          }
+     });
+});
