@@ -73,7 +73,7 @@ $(document).on("click", "#salvar", function(){
      }
      $.ajax({
           type: "post",
-          url: "",
+          url: "https://mobile2ds2-luizamaro11.c9users.io/webservice/update.php",
           data: parametros,
           success: function(data){
                navigator.notification.alert(data);
@@ -88,7 +88,7 @@ $(document).on("click", "#salvar", function(){
 $(document).on("click", "#excluir", function(){
      $.ajax({
           type: "post",
-          url: "",
+          url: "https://mobile2ds2-luizamaro11.c9users.io/webservice/deleta.php",
           data: "id = " + $("#codigo").val(data),
           success: function(data){
                navigator.notification.alert(data);
