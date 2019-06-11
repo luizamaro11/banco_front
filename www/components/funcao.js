@@ -64,3 +64,38 @@ $(document).on("change", "#lista", function(){
           }
      });
 });
+
+$(document).on("click", "#salvar", function(){
+     var parametros = {
+          "codigo": $("#codigo").val(),
+          "nome": $("#nome").val(),
+          "email": $("#email").val(),
+     }
+     $.ajax({
+          type: "post",
+          url: "",
+          data: parametros,
+          success: function(data){
+               navigator.notification.alert(data);
+               location.reload();
+          },
+          error: function(data){
+               navigator.notification.alert(data);
+          }
+     });
+});
+
+$(document).on("click", "#excluir", function(){
+     $.ajax({
+          type: "post",
+          url: "",
+          data: "id = " + $("#codigo").val(data),
+          success: function(data){
+               navigator.notification.alert(data);
+               location.reload();
+          },
+          error: function(data){
+               navigator.notification.alert(data);
+          }
+     });
+});
